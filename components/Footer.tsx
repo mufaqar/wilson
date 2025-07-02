@@ -41,7 +41,7 @@ const Footer = () => {
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="flex md:flex-row flex-col md:gap-10 gap-8">
-          <div className="w-fit">
+          <div className="w-full md:w-[475px]">
             <Link href="/">
               <Image
                 src="/images/footer-logo.png"
@@ -50,7 +50,7 @@ const Footer = () => {
                 height={64}
               />
             </Link>
-            <p className="text-base font-normal text-white mt-4 mb-10 max-w-[475px]">
+            <p className="text-base font-normal text-white mt-4 mb-10 ">
               Wilson Consulting Group (WCG) is an innovative global
               cybersecurity consulting firm headquartered in Washington D.C.,
               with a European office in London, England.
@@ -85,7 +85,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="w-fit">
+          <div className="w-full md:w-[220px]">
             <h6 className="text-lg font-bold text-wils_orang mb-4 ">
               Quick Links
             </h6>
@@ -148,7 +148,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="">
             <h6 className="text-lg font-bold text-wils_orang mb-4">
               Our Services
             </h6>
