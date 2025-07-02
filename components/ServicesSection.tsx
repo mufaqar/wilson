@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { JSX } from "react/jsx-runtime";
 
 interface Service {
-  icon: any;
+  icon: JSX.Element;
   title: string;
   description: string;
   highlighted?: boolean;

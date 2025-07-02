@@ -44,7 +44,7 @@ const Partners = () => {
               { logo: "/images/inclogo.png" },
               { logo: "/images/penny-hoarder.png" },
             ].map((item, index) => (
-              <div className='w-[242px] h-[116px]'>
+              <div className='w-[242px] h-[116px]' key={index}>
                 <Image src={item?.logo} alt={item?.logo} width={185} height={116} className='object-contain w-auto h-auto mx-auto' />
               </div>
             ))}

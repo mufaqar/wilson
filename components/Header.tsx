@@ -21,7 +21,7 @@ const menuItems: MenuItem[] = [
 ];
 
 export default function Header() {
-  const [hovered, setHovered] = useState<string | null>(null);
+ // const [hovered, setHovered] = useState<string | null>(null);
   const [mblMenu, setmblMenu] = useState(false);
 
   return (
@@ -41,8 +41,8 @@ export default function Header() {
               <li
                 key={item.name}
                 className="relative group"
-                onMouseEnter={() => setHovered(item.name)}
-                onMouseLeave={() => setHovered(null)}
+              //  onMouseEnter={() => setHovered(item.name)}
+             //   onMouseLeave={() => setHovered(null)}
               >
                 <Link href={item.href} className="hover:text-secondary transition text-lg font-medium">
                   {item.name}
