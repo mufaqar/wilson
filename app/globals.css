@@ -9,6 +9,14 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Sofia-Pro";
+  src: url("/fonts/sofia_pro_regular_az.woff2") format("woff2"),
+    url("/fonts/sofia_pro_regular_az.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --primary: #0b324f;
@@ -17,6 +25,7 @@
   --wils_orang: #ef6c33;
   --foreground: #0c3b5e;
   --font-satoshi: "Satoshi", sans-serif;
+  --font-Sofia-Pro: "Sofia-Pro", sans-serif;
 }
 
 @theme inline {
@@ -27,7 +36,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-satoshi: "Satoshi", sans-serif;
+  --font-satoshi: var(--font-satoshi);
+  --font-Sofia: var(--font-Sofia-Pro);
 }
 
 .container {
@@ -50,7 +60,15 @@
 }
 
 body {
-  @apply font-satoshi;
+  font-family: "Satoshi-Regular";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sofia-Pro";
 }
 .Grad_BG {
   background-image: linear-gradient(
