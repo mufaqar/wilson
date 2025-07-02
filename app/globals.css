@@ -29,6 +29,7 @@
   --font-mono: var(--font-geist-mono);
   --font-satoshi: "Satoshi", sans-serif;
 }
+
 .container {
   width: 100%;
   @media (width >= 40rem /* 640px */) {
@@ -46,6 +47,10 @@
   @media (width >= 96rem /* 1536px */) {
     max-width: 1240px /* 1240px */;
   }
+}
+
+body {
+  @apply font-satoshi;
 }
 .Grad_BG {
   background-image: linear-gradient(
