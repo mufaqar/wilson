@@ -35,3 +35,6 @@
         max-width: 1240px /* 1240px */;
     }
 }
+.Grad_BG {
+  background-image:linear-gradient(150deg, #ee6c4d 20%, #ef6c33 15%, #fce8e3 60%)
+}

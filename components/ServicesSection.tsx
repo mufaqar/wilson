@@ -1,16 +1,9 @@
 "use client";
 
-import {
-  FaShieldAlt,
-  FaCertificate,
-  FaClipboardCheck,
-  FaUserShield,
-  FaLock,
-  FaGavel,
-} from "react-icons/fa";
+import Image from "next/image";
 
 interface Service {
-  icon: JSX.Element;
+  icon: any;
   title: string;
   description: string;
   highlighted?: boolean;
@@ -18,35 +11,35 @@ interface Service {
 
 const services: Service[] = [
   {
-    icon: <FaShieldAlt className="text-2xl text-[#E86C40]" />,
+    icon: <Image src="/images/assessment.svg" alt="assessment" width={70} height={70} />,
     title: "Vulnerability Assessment",
     description:
       "Vulnerability Assessment is the practice of identifying, classifying, remediating.",
     highlighted: true,
   },
   {
-    icon: <FaCertificate className="text-2xl text-[#E86C40]" />,
+    icon: <Image src="/images/fedramp.svg" alt="fedramp" width={70} height={70} />,
     title: "FedRAMP Advisory",
     description: "Achieve and maintain your FedRAMP Authority to Operate (ATO)",
   },
   {
-    icon: <FaClipboardCheck className="text-2xl text-[#E86C40]" />,
+    icon: <Image src="/images/fisma.svg" alt="fisma" width={70} height={70} />,
     title: "FISMA Assessment",
     description: "Whereby is the super simple way to great connect over video.",
   },
   {
-    icon: <FaUserShield className="text-2xl text-[#E86C40]" />,
+    icon: <Image src="/images/governance.svg" alt="governance" width={70} height={70} />,
     title: "IT Governance",
     description: "Whereby is the super simple way to great connect over video.",
   },
   {
-    icon: <FaLock className="text-2xl text-[#E86C40]" />,
+    icon: <Image src="/images/consulting.svg" alt="consulting" width={70} height={70} />,
     title: "CMMC Consulting",
     description:
       "Vulnerability Assessment is the practice of identifying, classifying remediating.",
   },
   {
-    icon: <FaGavel className="text-2xl text-[#E86C40]" />,
+    icon: <Image src="/images/gdpr.svg" alt="gdpr" width={70} height={70} />,
     title: "GDPR Compliance Consulting",
     description: "Whereby is the super simple way to great connect over video.",
   },
@@ -54,33 +47,31 @@ const services: Service[] = [
 
 export default function ServicesSection() {
   return (
-    <section className="bg-white px-6 md:px-14 py-16">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-white py-16">
+      <div className="container mx-auto md:px-5 px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0C2D4A]">
+          <h2 className="text-3xl md:text-6xl font-medium text-black">
             Our Services
           </h2>
-          <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto mt-2">
+          <p className="text-black text-base md:text-lg font-medium max-w-2xl mx-auto mt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua
           </p>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6 ">
           {services.map((service, index) => (
             <div
               key={index}
-              className={`rounded-xl border p-6 w-full h-full ${
-                service.highlighted
-                  ? "bg-[#E9F5FF] border-[#D4EBFF]"
-                  : "bg-white border-[#EEE]"
-              } shadow-sm hover:shadow-md transition`}
+              className={`rounded-[20px] px-8 pt-14 pb-16 w-full max-h-[328px] h-full first:md:col-span-2 last:md:col-span-2  ${service.highlighted
+                  ? "bg-background shadow-[0px_3px_0px_0px] shadow-wils_orang"
+                  : "bg-white shadow-[0px_0px_0px_1px] shadow-[#DDEAF9]"
+                } `}
             >
-              <div className="mb-4">{service.icon}</div>
-              <h3 className="font-semibold text-lg text-[#0C2D4A] mb-2">
+              <div className="mb-6">{service.icon}</div>
+              <h3 className="md:text-2xl text-xl font-semibold mb-2">
                 {service.title}
               </h3>
-              <p className="text-gray-600 text-sm">{service.description}</p>
+              <p className="md:text-lg text-base font-normal text-black">{service.description}</p>
             </div>
           ))}
         </div>

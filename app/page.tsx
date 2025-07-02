@@ -1,16 +1,17 @@
-import CardGrid from "@/components/CardGrid";
+import CardGrid from "@/components/BlogGrid";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import HeroSection from "@/components/HeroSection";
+import Industries from "@/components/industries";
 import ServicesSection from "@/components/ServicesSection";
-import StatsSection from "@/components/StatsSection";
-import Image from "next/image";
+import Partners from "@/components/Partners";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
       <ServicesSection />
-      <StatsSection />
+      <Industries />
+      <Partners />
       <CaseStudiesSection />
        <CardGrid />
     </>

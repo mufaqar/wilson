@@ -7,64 +7,80 @@ interface CaseStudy {
   image: string;
   title: string;
   description: string;
-  link?: string;
+  link: string;
+  tag: string;
 }
 
 const caseStudies: CaseStudy[] = [
   {
-    image: '/case1.jpg',
-    title: 'Cloud Security Transformation',
-    description: 'How our client achieved FedRAMP compliance in record time through our cloud security strategy.',
+    image: '/images/howard.png',
+    tag: 'Case Study',
+    title: 'Howard University – School of Social Work | Case History',
+    description:
+      'WCG conducted a review of the E. Franklin Frazier Center’s systems, and then provided recommendations and developed a strategic plan.',
     link: '#',
   },
   {
-    image: '/case2.jpg',
-    title: 'Public Sector Modernization',
-    description: 'Helping a government agency streamline compliance and modernize legacy infrastructure.',
+    image: '/images/howard.png',
+    tag: 'Case Study',
+    title: 'Howard University – School of Social Work | Case History',
+    description:
+      'WCG conducted a review of the E. Franklin Frazier Center’s systems, and then provided recommendations and developed a strategic plan.',
     link: '#',
   },
   {
-    image: '/case3.jpg',
-    title: 'GDPR Compliance Across Borders',
-    description: 'Guiding a global tech company to meet complex GDPR obligations efficiently.',
+    image: '/images/howard.png',
+    tag: 'Case Study',
+    title: 'Howard University – School of Social Work | Case History',
+    description:
+      'WCG conducted a review of the E. Franklin Frazier Center’s systems, and then provided recommendations and developed a strategic plan.',
     link: '#',
   },
 ];
 
 export default function CaseStudiesSection() {
   return (
-    <section className="bg-[#F4FBFF] px-6 md:px-14 py-16 rounded-t-[40px]">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
+    <section className="bg-background py-16 rounded-[35px]">
+      <div className="container mx-auto md:px-5 px-4">
+        {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0C2D4A]">Case Studies</h2>
-          <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto mt-2">
-            See how we’ve helped organizations across industries meet compliance and security goals with speed and confidence.
+          <h2 className="text-3xl md:text-6xl font-medium text-black">
+            Client Case Studies
+          </h2>
+          <p className="text-black text-base md:text-lg font-medium max-w-2xl mx-auto mt-2">
+            Check How We Have Helped Our Clients
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {caseStudies.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
+              className="rounded-3xl bg-white"
             >
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={500}
-                height={300}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-[#0C2D4A] mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600 mb-4">{item.description}</p>
-                {item.link && (
-                  <Link href={item.link} className="text-[#00AEEF] text-sm font-semibold hover:underline">
-                    Read More →
-                  </Link>
-                )}
+              <div className='bg-primary rounded-t-3xl h-[259px] flex items-center justify-center'>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={224}
+                  height={93}
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="px-4 pb-10 pt-5 flex flex-col flex-grow">
+                {/* Tag Badge */}
+                <Link href="#" className="md:text-lg text-base font-bold text-wils_orang mb3">
+                  {item.tag}
+                </Link>
+
+                <Link href={item?.link} className="md:text-3xl text-2xl font-medium text-black mb-2">
+                  {item.title}
+                </Link>
+                <p className="md:text-lg text-base text-black font-normal">
+                  {item.description}
+                </p>               
               </div>
             </div>
           ))}
