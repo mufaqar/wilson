@@ -12,7 +12,7 @@ const Partners = () => {
             </h2>
           </div>
           <div>
-            <p className='text-lg font-normal text-black'>
+            <p className='text-lg font-normal text-black font-satoshi'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </p>
           </div>

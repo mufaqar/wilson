@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-import { FaBars, FaChevronDown, FaSearch } from 'react-icons/fa';
-import { IoClose } from 'react-icons/io5';
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { FaBars, FaChevronDown, FaSearch } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
 interface MenuItem {
   name: string;
@@ -13,38 +13,50 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-  { name: 'Home', href: '/' },
-  { name: 'About Us', href: '#', submenu: true },
-  { name: 'Services', href: '#', submenu: true },
-  { name: 'Industries We Serve', href: '#', submenu: true },
-  { name: 'Career', href: '/career' },
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "#", submenu: true },
+  { name: "Services", href: "#", submenu: true },
+  { name: "Industries We Serve", href: "#", submenu: true },
+  { name: "Career", href: "/career" },
 ];
 
 export default function Header() {
- // const [hovered, setHovered] = useState<string | null>(null);
+  // const [hovered, setHovered] = useState<string | null>(null);
   const [mblMenu, setmblMenu] = useState(false);
 
   return (
     <header className="p-8 bg-background">
-      <div className='container mx-auto md:px-5 px-4 py-3 bg-white rounded-[100px] flex justify-between items-center'>
+      <div className="container mx-auto md:px-5 px-4 py-3 bg-white rounded-[100px] flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <Link href="/" className='flex md:w-[128px] h-[52px] justify-center items-center'>
-            <Image src="/images/logo.png" alt='logo' width={45} height={57} />
+          <Link
+            href="/"
+            className="flex md:w-[128px] h-[52px] justify-center items-center"
+          >
+            <Image src="/images/logo.png" alt="logo" width={45} height={57} />
           </Link>
         </div>
 
         {/* Navigation */}
         <nav>
-          <ul className={` lg:flex-row flex-col gap-6 lg:static lg:bg-transparent ${mblMenu ? "flex absolute bg-background left-0 right-0 p-5 top-[100px]" : "lg:flex hidden"}`}>
+          <ul
+            className={` lg:flex-row flex-col gap-6 lg:static lg:bg-transparent ${
+              mblMenu
+                ? "flex absolute bg-background left-0 right-0 p-5 top-[100px]"
+                : "lg:flex hidden"
+            }`}
+          >
             {menuItems.map((item) => (
               <li
                 key={item.name}
                 className="relative group"
-              //  onMouseEnter={() => setHovered(item.name)}
-             //   onMouseLeave={() => setHovered(null)}
+                //  onMouseEnter={() => setHovered(item.name)}
+                //   onMouseLeave={() => setHovered(null)}
               >
-                <Link href={item.href} className="hover:text-secondary transition text-lg font-medium">
+                <Link
+                  href={item.href}
+                  className="hover:text-secondary transition text-lg font-medium"
+                >
                   {item.name}
                 </Link>
                 {item.submenu && (
@@ -62,10 +74,9 @@ export default function Header() {
           </button>
           <button
             onClick={() => setmblMenu(!mblMenu)}
-            className='lg:hidden flex text-2xl'>
-            {!mblMenu ?
-              <FaBars /> : <IoClose />
-            }
+            className="lg:hidden flex text-2xl"
+          >
+            {!mblMenu ? <FaBars /> : <IoClose />}
           </button>
           <Link
             href="/contact"

@@ -1,11 +1,22 @@
 @import "tailwindcss";
 
+/* app/globals.css */
+@font-face {
+  font-family: "Satoshi-Regular";
+  src: url("/fonts/Satoshi-Regular.woff2") format("woff2"),
+    url("/fonts/Satoshi-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --primary: #0B324F;
-  --secondary: #00A2E7;
-  --background: #F2FAFD;
-  --wils_orang: #EF6C33;
-  --foreground: #0C3B5E;
+  --primary: #0b324f;
+  --secondary: #00a2e7;
+  --background: #f2fafd;
+  --wils_orang: #ef6c33;
+  --foreground: #0c3b5e;
+  --font-satoshi: "Satoshi", sans-serif;
 }
 
 @theme inline {
@@ -16,25 +27,31 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-satoshi: "Satoshi", sans-serif;
 }
 .container {
-    width: 100%;
-    @media (width >= 40rem /* 640px */) {
-        max-width: 40rem /* 640px */;
-    }
-    @media (width >= 48rem /* 768px */) {
-        max-width: 48rem /* 768px */;
-    }
-    @media (width >= 64rem /* 1024px */) {
-        max-width: 64rem /* 1024px */;
-    }
-    @media (width >= 80rem /* 1280px */) {
-        max-width: 1240px /* 1240px */;
-    }
-    @media (width >= 96rem /* 1536px */) {
-        max-width: 1240px /* 1240px */;
-    }
+  width: 100%;
+  @media (width >= 40rem /* 640px */) {
+    max-width: 40rem /* 640px */;
+  }
+  @media (width >= 48rem /* 768px */) {
+    max-width: 48rem /* 768px */;
+  }
+  @media (width >= 64rem /* 1024px */) {
+    max-width: 64rem /* 1024px */;
+  }
+  @media (width >= 80rem /* 1280px */) {
+    max-width: 1240px /* 1240px */;
+  }
+  @media (width >= 96rem /* 1536px */) {
+    max-width: 1240px /* 1240px */;
+  }
 }
 .Grad_BG {
-  background-image:linear-gradient(150deg, #ee6c4d 20%, #ef6c33 15%, #fce8e3 60%)
+  background-image: linear-gradient(
+    150deg,
+    #ee6c4d 20%,
+    #ef6c33 15%,
+    #fce8e3 60%
+  );
 }
