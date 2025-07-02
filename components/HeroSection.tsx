@@ -7,7 +7,7 @@ import ComplianceExperts from "./ComplianceExperts";
 export default function HeroSection() {
   return (
     <>
-      <section className="bg-background md:px-14 py-10 md:pt-20 rounded-b-[40px] pb-[200px]">
+      <section className="bg-background md:px-14 py-10 md:pt-20 rounded-b-[35px] pb-[200px]">
         <div className="container mx-auto md:px-5 px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left Content */}
           <div className="space-y-5">

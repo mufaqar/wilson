@@ -1,108 +1,178 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
-import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaYoutube, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
+import { FaLocationDot } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-gray-700">
+    <footer className="bg-foreground pt-[96px] rounded-t-[35px] md:px-0 px-4 ">
       {/* Subscription Section */}
-      <div className="container mx-auto px-4 py-12 border-b border-gray-200">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Subscription Center</h2>
-          <p className="mb-6">Stay in the know with our newsletter</p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Enter Email Address" 
-              className="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors duration-300">
-              Submit
-            </button>
+      <div className="container mx-auto rounded-[20px] py-11 px-4 sm:px-7 lg:px-9 mb-5 shadow-[0px_0px_0px_3px] shadow-[#28A0CF1F]">
+        <div className='grid md:grid-cols-2 grid-cols-1 gap-6 items-center'>
+          <div>
+            <h2 className='md:text-5xl text-3xl font-medium text-white mb-3'>
+              Subscription Center
+            </h2>
+            <p className='md:text-xl text-lg font-normal text-white'>
+              Stay In The Know With Our Newsletter
+            </p>
+          </div>
+          <div>
+            <form className='flex items-center gap-2'>
+              <input
+                type="email"
+                placeholder="Enter Email Address"
+                className='text-lg font-normal text-white placeholder:text-white border border-white/60 px-4 py-3 rounded-[8px] focus:outline-0 w-full' />
+              <button className="bg-wils_orang hover:bg-primary text-white px-5 py-3.5 rounded-lg md:text-xl text-base font-semibold inline-flex w-fit text-center justify-center md:px-[60px]">
+                Submit
+              </button>
+            </form>
           </div>
         </div>
       </div>
-
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="mb-8">
-            <h3 className="text-xl font-bold mb-4">Wilson Consulting Group</h3>
-            <p className="mb-4">
-              Wilson Consulting Group (WCZ) is an innovative global cybersecurity consulting firm headquartered in Washington D.C., with a European office in London, England.
+        <div className="flex md:flex-row flex-col md:gap-16 gap-8">
+          <div className='w-fit'>
+            <Link href="/">
+              <Image src="/images/footer-logo.png" alt='logo' width={327} height={64} />
+            </Link>
+            <p className='text-base font-normal text-white mt-4 mb-10 max-w-[475px]'>
+              Wilson Consulting Group (WCG) is an innovative global cybersecurity consulting firm headquartered in Washington D.C., with a European office in London, England.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-600 hover:text-blue-600">
-                <FaLinkedin size={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-blue-400">
-                <FaTwitter size={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-blue-800">
-                <FaFacebook size={20} />
-              </a>
-              <a href="#" className="text-gray-600 hover:text-pink-600">
-                <FaInstagram size={20} />
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="mb-8">
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {['About us', 'Our Services', 'Cyber Security', 'Industries we Serve', 'Career', 'Contact', 'Privacy Policy'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="hover:text-blue-600 transition-colors duration-300">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div className="mb-8">
-            <h3 className="text-xl font-bold mb-4">Our Services</h3>
-            <ul className="space-y-2">
-              {['Cyber Security Assessment', 'Risk Management and Assessment', 'Cloud Services', 'Cybersecurity Maturity Model Certification (CMNC)'].map((service) => (
-                <li key={service}>
-                  <a href="#" className="hover:text-blue-600 transition-colors duration-300">
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="mb-8">
-            <h3 className="text-xl font-bold mb-4">Contact Info</h3>
-            <ul className="space-y-2">
+            <h6 className='text-base font-medium text-white mb-4'>
+              Follow Us On
+            </h6>
+            <ul className='flex flex-wrap gap-4'>
               <li>
-                <a href="mailto:info@wilsoncgp.com" className="hover:text-blue-600 transition-colors duration-300">
-                  info@wilsoncgp.com
-                </a>
+                <Link href="#" className='text-xl text-[#EF6C33] hover:text-white'>
+                  <FaFacebook />
+                </Link>
               </li>
-              <li>2021 Idaho Avenue SW, Suite 2000, Washington DC 20004</li>
-              <li>1862/RGASS</li>
+              <li>
+                <Link href="#" className='text-xl text-[#EF6C33] hover:text-white'>
+                  <FaInstagram />
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className='text-xl text-[#EF6C33] hover:text-white'>
+                  <FaYoutube />
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h6 className='text-lg font-bold text-wils_orang mb-4'>
+              Quick Links
+            </h6>
+            <ul className='flex flex-col gap-4'>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+                  About us
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+                  Our Services
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+                  Cyber Security
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+                  Industries we Serve
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+                  Career
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h6 className='text-lg font-bold text-wils_orang mb-4'>
+              Our Services
+            </h6>
+            <ul className='flex flex-col gap-4'>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+                  Cyber Security Assessment
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+                  Risk Management and Assessment
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+                  Cloud Services
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+                  Cybersecurity Maturity Model Certification (CMMC)
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h6 className='text-lg font-bold text-wils_orang mb-4'>
+              Contact Info
+            </h6>
+            <ul className='flex flex-col gap-4'>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang flex gap-3.5 items-center underline'>
+                  <span className='text-wils_orang'><FaEnvelope /> </span> sales@wilsoncgrp.com
+                </Link>
+              </li>
+              <li>
+                <span className='text-base font-normal text-white hover:text-wils_orang flex gap-3.5 items-center'>
+                  <span className='text-wils_orang'><FaLocationDot /> </span> 800 Maine Avenue SW, Suite 200, Washington DC 20024
+                </span>
+              </li>
+              <li>
+                <Link href="#" className='text-base font-normal text-white hover:text-wils_orang flex gap-3.5 items-center underline'>
+                  <span className='text-wils_orang'><FaPhoneAlt /> </span>1.866.780.1655
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
       {/* Copyright */}
-      <div className="bg-gray-200 py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>© 2024 Wilson Consulting Group. All Rights Reserved.</p>
-            <div className="flex space-x-4 mt-4 md:mt-0">
-              <a href="#" className="hover:text-blue-600 transition-colors duration-300">Terms of Service</a>
-              <a href="#" className="hover:text-blue-600 transition-colors duration-300">Privacy Policy</a>
-            </div>
-          </div>
-        </div>
+      <div className='container mx-auto px-4 pb-[50px] pt-[38px] border-t border-white/15 flex justify-between'>
+        <p className='text-base font-normal text-white'>
+          © 2024 Wilson Consulting Group. All Rights Reserved.
+        </p>
+        <ul className='flex flex-wrap gap-4'>
+          <li>
+            <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+              Terms of Service
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className='text-base font-normal text-white hover:text-wils_orang'>
+              Privacy Policy
+            </Link>
+          </li>
+        </ul>
       </div>
     </footer>
   );

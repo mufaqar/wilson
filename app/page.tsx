@@ -1,4 +1,4 @@
-import CardGrid from "@/components/BlogGrid";
+import BlogGrid from "@/components/BlogGrid";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import HeroSection from "@/components/HeroSection";
 import Industries from "@/components/industries";
@@ -13,7 +13,7 @@ export default function Home() {
       <Industries />
       <Partners />
       <CaseStudiesSection />
-       <CardGrid />
+       <BlogGrid />
     </>
   );
 }
