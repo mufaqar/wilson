@@ -6,23 +6,56 @@ import { useState } from "react";
 import { FaBars, FaChevronDown, FaSearch } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
+interface SubMenuItem {
+  name: string;
+  href: string;
+}
+
 interface MenuItem {
   name: string;
   href: string;
-  submenu?: boolean;
+  submenu?: SubMenuItem[];
 }
 
 const menuItems: MenuItem[] = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "#", submenu: true },
-  { name: "Services", href: "#", submenu: true },
-  { name: "Industries We Serve", href: "#", submenu: true },
+  {
+    name: "Home",
+    href: "/"
+  },
+  {
+    name: "About Us",
+    href: "#",
+    submenu: [
+      { name: "Our Story", href: "/about/our-story" },
+      { name: "Leadership", href: "/about/leadership" },
+      { name: "Mission & Values", href: "/about/mission-values" },
+    ],
+  },
+  {
+    name: "Services",
+    href: "#",
+    submenu: [
+      { name: "Our Story", href: "/about/our-story" },
+      { name: "Leadership", href: "/about/leadership" },
+      { name: "Mission & Values", href: "/about/mission-values" },
+    ],
+  },
+  {
+    name: "Industries We Serve",
+    href: "#",
+    submenu: [
+      { name: "Our Story", href: "/about/our-story" },
+      { name: "Leadership", href: "/about/leadership" },
+      { name: "Mission & Values", href: "/about/mission-values" },
+    ],
+  },
   { name: "Career", href: "/career" },
 ];
 
 export default function Header() {
   // const [hovered, setHovered] = useState<string | null>(null);
   const [mblMenu, setmblMenu] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
   return (
     <header className="p-8 bg-background">
@@ -40,30 +73,54 @@ export default function Header() {
         {/* Navigation */}
         <nav>
           <ul
-            className={` lg:flex-row flex-col gap-6 lg:static lg:bg-transparent ${
-              mblMenu
-                ? "flex absolute bg-background left-0 right-0 p-5 top-[100px]"
-                : "lg:flex hidden"
-            }`}
+            className={` lg:flex-row flex-col md:gap-6 gap-0 lg:static lg:bg-transparent ${mblMenu
+              ? "flex absolute bg-background left-0 right-0 p-5 top-[100px]"
+              : "lg:flex hidden"
+              }`}
           >
-            {menuItems.map((item) => (
-              <li
-                key={item.name}
-                className="relative group"
-                //  onMouseEnter={() => setHovered(item.name)}
-                //   onMouseLeave={() => setHovered(null)}
-              >
-                <Link
-                  href={item.href}
-                  className="hover:text-secondary transition text-lg font-medium"
-                >
-                  {item.name}
-                </Link>
-                {item.submenu && (
-                  <FaChevronDown className="inline-block ml-1 w-3 h-3 text-black group-hover:text-secondary" />
-                )}
-              </li>
-            ))}
+            {menuItems.map((item) => {
+              const isSubmenuOpen = activeSubmenu === item.name;
+
+              return (
+                <li key={item.name} className="relative group list-none">
+                  <button
+                    onClick={() =>
+                      item.submenu
+                        ? setActiveSubmenu(isSubmenuOpen ? null : item.name)
+                        : setmblMenu(false)
+                    }
+                    className="px-4 py-2 text-black hover:text-secondary text-lg font-medium flex items-center gap-1 w-full text-left lg:text-center"
+                  >
+                    {item.name}
+                    {item.submenu && <FaChevronDown className="w-3 h-3 mt-1" />}
+                  </button>
+
+                  {item.submenu && (
+                    <ul
+                      className={`
+            z-50 transition-all duration-200
+            ${mblMenu
+                          ? isSubmenuOpen
+                            ? 'block relative md:bg-background :md:mt-1 md:pl-4'
+                            : 'hidden'
+                          : 'md:absolute left-0 top-full mt-2 w-52 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible'}
+          `}
+                    >
+                      {item.submenu.map((subItem) => (
+                        <li key={subItem.name}>
+                          <Link
+                            href={subItem.href}
+                            className="block px-4 py-2 text-black hover:text-secondary text-lg font-medium transition"
+                          >
+                            {subItem.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
 

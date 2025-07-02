@@ -18,7 +18,7 @@ const Partners = () => {
           </div>
         </div>
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-x divide-[#E3E3E3] my-16 pb-16 border-b border-black/15">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:divide-x divide-[#E3E3E3] my-16 pb-16 border-b border-black/15">
           {[
             { value: "500+", label: "PROJECTS COMPLETED" },
             { value: "200+", label: "SATISFIED CLIENTS" },
@@ -33,7 +33,6 @@ const Partners = () => {
         </div>
 
         {/* Client Logos Section */}
-        <div className="mb-16">
           <div className="flex flex-wrap gap-8 items-center justify-center">
             {[
               { logo: "/images/womens-world.png" },
@@ -44,12 +43,11 @@ const Partners = () => {
               { logo: "/images/inclogo.png" },
               { logo: "/images/penny-hoarder.png" },
             ].map((item, index) => (
-              <div className='w-[242px] h-[116px]' key={index}>
+              <div className='w-[242px] h-[116px] flex items-center justify-center' key={index}>
                 <Image src={item?.logo} alt={item?.logo} width={185} height={116} className='object-contain w-auto h-auto mx-auto' />
               </div>
             ))}
           </div>
-        </div>
       </div>
     </section>
   );
