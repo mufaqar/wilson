@@ -17,7 +17,7 @@ export default function HeroSection() {
                 <span className="text-base font-bold uppercase tracking-wide"> CERTIFIED FEDRAMP & STATERAMP</span>
               </div>
             </div>
-            <h1 className="text-4xl md:text-7xl font-medium text-black leading-tight">
+            <h1 className="text-4xl md:text-[77.6px] md:leading-[77.5px] font-normal text-black tracking-[-5%]">
               Fast-Track Your <br /> FedRAMP & <br /> StateRAMP
             </h1>
             <p className="text-black text-base md:text-lg font-normal max-w-lg">
@@ -27,13 +27,13 @@ export default function HeroSection() {
             <div className="flex space-x-4 pt-2">
               <Link
                 href="#"
-                className="bg-wils_orang hover:bg-primary text-white px-5 py-2.5 rounded-lg md:text-xl text-base font-semibold inline-flex md:w-[220px] w-1/2 text-center justify-center"
+                className="secondary_btn"
               >
                 Read More
               </Link>
               <Link
                 href="#"
-                className="bg-transparent border-secondary border-2 text-secondary hover:bg-secondary hover:text-white px-5 py-2.5 rounded-lg md:text-xl text-base font-semibold inline-flex md:w-[220px] w-1/2 text-center justify-center"
+                className="primary_btn"
               >
                 Services
               </Link>

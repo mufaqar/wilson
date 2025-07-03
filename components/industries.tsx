@@ -82,13 +82,13 @@ export default function Industries() {
         <div className="flex space-x-4 justify-center mt-14">
           <Link
             href="#"
-            className="bg-wils_orang hover:bg-primary text-white px-5 py-2.5 rounded-lg md:text-xl text-base font-semibold inline-flex md:w-[220px] w-1/2 text-center justify-center"
+            className="secondary_btn"
           >
             Read More
           </Link>
           <Link
             href="#"
-            className="bg-transparent border-secondary border-2 text-secondary hover:bg-secondary hover:text-white px-5 py-2.5 rounded-lg md:text-xl text-base font-semibold inline-flex md:w-[220px] w-1/2 text-center justify-center"
+            className="primary_btn"
           >
             Services
           </Link>

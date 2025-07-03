@@ -78,3 +78,9 @@ h6 {
     #fce8e3 60%
   );
 }
+.primary_btn{
+  @apply bg-transparent border-secondary border-2 text-secondary hover:bg-secondary hover:text-white px-5 py-[18.5px] rounded-lg md:text-xl text-base font-semibold inline-flex md:w-[220px] w-1/2 text-center justify-center;
+}
+.secondary_btn{
+  @apply bg-wils_orang hover:bg-primary text-white px-5 py-[18.5px] rounded-lg md:text-xl text-base font-semibold inline-flex md:w-[220px] w-1/2 text-center justify-center;
+}
