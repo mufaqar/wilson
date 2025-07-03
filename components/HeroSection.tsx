@@ -12,9 +12,9 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className="space-y-5">
             <div className="Grad_BG w-fit p-[1px] rounded-full">
-              <div className="flex items-center gap-2.5 bg-white pl-2.5 pr-5 py-2.5 w-fit rounded-full">
+              <div className="flex items-center gap-2.5 bg-white pl-2.5 pr-5 py-2.5 md:w-[409px] rounded-full">
                 <Image src="/images/certified.svg" alt="certified" width={32} height={32} />
-                <span className="text-base font-bold uppercase tracking-wide"> CERTIFIED FEDRAMP & STATERAMP</span>
+                <span className="text-base font-bold uppercase tracking-[2.6px]"> CERTIFIED FEDRAMP & STATERAMP</span>
               </div>
             </div>
             <h1 className="text-4xl md:text-[77.6px] md:leading-[77.5px] font-normal text-black tracking-[-4px]">
