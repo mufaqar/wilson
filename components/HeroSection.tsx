@@ -17,7 +17,7 @@ export default function HeroSection() {
                 <span className="text-base font-bold uppercase tracking-wide"> CERTIFIED FEDRAMP & STATERAMP</span>
               </div>
             </div>
-            <h1 className="text-4xl md:text-[77.6px] md:leading-[77.5px] font-normal text-black tracking-[-5%]">
+            <h1 className="text-4xl md:text-[77.6px] md:leading-[77.5px] font-normal text-black tracking-[-4px]">
               Fast-Track Your <br /> FedRAMP & <br /> StateRAMP
             </h1>
             <p className="text-black text-base md:text-lg font-normal max-w-lg">

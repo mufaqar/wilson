@@ -73,7 +73,7 @@ export default function Header() {
         {/* Navigation */}
         <nav>
           <ul
-            className={` lg:flex-row flex-col md:gap-6 gap-0 lg:static lg:bg-transparent ${mblMenu
+            className={` lg:flex-row flex-col md:gap-0 gap-0 lg:static lg:bg-transparent ${mblMenu
               ? "flex absolute bg-background left-0 right-0 p-5 top-[100px]"
               : "lg:flex hidden"
               }`}
@@ -89,7 +89,7 @@ export default function Header() {
                         ? setActiveSubmenu(isSubmenuOpen ? null : item.name)
                         : setmblMenu(false)
                     }
-                    className="px-4 py-2 text-black hover:text-secondary text-lg font-medium flex items-center gap-1 w-full text-left lg:text-center"
+                    className="px-4 py-2 text-black hover:text-secondary text-lg font-normal flex items-center gap-1 w-full text-left lg:text-center"
                   >
                     {item.name}
                     {item.submenu && <FaChevronDown className="w-3 h-3 mt-1" />}
@@ -137,7 +137,7 @@ export default function Header() {
           </button>
           <Link
             href="/contact"
-            className="bg-primary hover:bg-secondary text-xl font-semibold text-white px-5 py-3 rounded-lg md:inline-flex hidden"
+            className="bg-primary hover:bg-secondary text-xl font-semibold text-white px-7 py-3 rounded-[12px] md:inline-flex hidden"
           >
             Contact Us
           </Link>

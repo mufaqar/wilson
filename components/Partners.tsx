@@ -25,8 +25,8 @@ const Partners = () => {
             { value: "15+", label: "COUNTRIES SERVED" },
             { value: "99.9%", label: "UPTIME ACHIEVED" },
           ].map((stat, index) => (
-            <div key={index} className="text-center px-6">
-              <h2 className="md:text-[56px] text-4xl font-semibold text-wils_orang mb-4">{stat.value}</h2>
+            <div key={index} className=" px-6">
+              <h2 className="md:text-[56px] text-4xl font-medium tracking-[-4px] text-wils_orang mb-4">{stat.value}</h2>
               <div className="text-black uppercase text-sm font-bold tracking-wider">{stat.label}</div>
             </div>
           ))}
